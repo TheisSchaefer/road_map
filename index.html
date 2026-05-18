@@ -1,17 +1,65 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="da">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2113.65">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mit Geodata Projekt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 { color: #333; }
+        .sektion {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 4px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt; &lt;html lang="da"&gt; &lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Mit Geodata Projekt&lt;/title&gt; &lt;style&gt; body { font-family: Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; } h1, h2 { color: #333; } .sektion { background: white; padding: 20px; margin-bottom: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); } iframe { width: 100%; height: 500px; border: none; border-radius: 4px; } img { max-width: 100%; height: auto; display: block; margin: 15px 0; border-radius: 4px; } &lt;/style&gt; &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Velkommen til mit interaktive kort-projekt&lt;/h1&gt; &lt;p&gt;Her kan du se mine geografiske analyser lavet med Pandas og Geopandas.&lt;/p&gt; &lt;div class="sektion"&gt; &lt;h2&gt;Kort 1: Første analyse&lt;/h2&gt; &lt;p&gt;Dette kort viser de første dataområder. Du kan klikke på markørerne for at se pop-ups.&lt;/p&gt; &lt;iframe src="map_up.html"&gt;&lt;/iframe&gt; &lt;/div&gt; &lt;div class="sektion"&gt; &lt;h2&gt;Statistik og Grafer&lt;/h2&gt; &lt;p&gt;Her er en tilhørende graf, der uddyber dataene fra kortet:&lt;/p&gt; &lt;img src=“up1.png” alt="Min data graf"&gt; &lt;/div&gt; &lt;div class="sektion"&gt; &lt;h2&gt;Kort 2: Anden analyse&lt;/h2&gt; &lt;p&gt;Dette kort viser den opfølgende analyse.&lt;/p&gt; &lt;iframe src="map_home.html"&gt;&lt;/iframe&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;</span></p>
+
+    <h1>Velkommen til mit interaktive kort-projekt</h1>
+    <p>Her kan du se mine geografiske analyser lavet med Pandas og Geopandas.</p>
+
+    <!-- SEKTION 1: FØRSTE KORT -->
+    <div class="sektion">
+        <h2>Kort 1: Første analyse</h2>
+        <p>Dette kort viser de første dataområder. Du kan klikke på markørerne for at se pop-ups.</p>
+        <iframe src="map_up.html"></iframe>
+    </div>
+
+    <!-- SEKTION 2: ET BILLEDE/GRAF -->
+    <div class="sektion">
+        <h2>Statistik og Grafer</h2>
+        <p>Her er en tilhørende graf, der uddyber dataene fra kortet:</p>
+        <img src="up1.png" alt="Min data graf">
+    </div>
+
+    <!-- SEKTION 3: ANDET KORT -->
+    <div class="sektion">
+        <h2>Kort 2: Anden analyse</h2>
+        <p>Dette kort viser den opfølgende analyse.</p>
+        <iframe src="map_home.html"></iframe>
+    </div>
+
 </body>
 </html>
