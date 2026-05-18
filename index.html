@@ -3,75 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mit Geodata Projekt</title>
+    <title>Vandretur 2026</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --bg-color: #f8fafc; /* Meget lys, ren baggrund */
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --primary-green: #2e4a3f; /* Smuk, dyb skovgrøn */
+            --accent-green: #4a6b5d;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 80px;
         }
-        h1, h2 { color: #333; }
+
+        /* Hero / Header Seation */
+        header {
+            background-color: var(--primary-green);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            font-weight: 300;
+        }
+
+        /* Main Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Flexbox/Grid til ruterne (Kort ved siden af hinanden på PC) */
+        .rute-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 900px) {
+            .rute-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Sektioner / Kort */
         .sektion {
-            background: white;
-            padding: 20px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
         }
+
+        .sektion h2 {
+            font-size: 1.4rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            border-left: 4px solid var(--accent-green);
+            padding-left: 10px;
+        }
+
         iframe {
             width: 100%;
             height: 500px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            background-color: #f1f5f9;
         }
+
+        /* Overnatnings-sektion (Fuld bredde) */
+        .overnatning-sektion {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 3rem;
+        }
+
+        .overnatning-sektion h2 {
+            font-size: 1.6rem;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .overnatning-sektion .undertekst {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Billed-galleri Grid (3 billeder ved siden af hinanden) */
+        .billede-galleri {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .billede-galleri {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .billede-kort {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .billede-kort p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
         img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /* Sørger for at billederne bliver skåret pænt til i samme højde */
+            border-radius: 6px;
             display: block;
-            margin: 15px 0;
-            border-radius: 4px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Vandretur 2026</h1>
-    <p>Rute op og rute hjem.</p>
+    <header>
+        <h1>Vandretur 2026</h1>
+        <p>Det interaktive ruteoverblik og potentielle overnatningssteder</p>
+    </header>
 
-    <!-- SEKTION 1: FØRSTE KORT -->
-    <div class="sektion">
-        <h2>Rute op: </h2>
-        <iframe src="map_up.html"></iframe>
-    </div>
+    <div class="container">
 
-    <!-- SEKTION 2: BILLEDER -->
-    <div class="sektion">
-        <h2>Potentielle overnatninger</h2>
-        <p>1. Overnatning:</p>
-        <img src="up1.png" alt="Min data graf">
-        <p>2. Overnatning:</p>
-        <img src="up2.png" alt="Min data graf">
-        <p>3. Overnatning:</p>
-        <img src="up3.png" alt="Min data graf">
-    </div>
+        <div class="rute-grid">
+            <div class="sektion">
+                <h2>Rute op</h2>
+                <iframe src="map_up.html"></iframe>
+            </div>
 
-    <!-- SEKTION 3: ANDET KORT -->
-    <div class="sektion">
-        <h2>Rute hjem:</h2>
-        <iframe src="map_home.html"></iframe>
-    </div>
+            <div class="sektion">
+                <h2>Rute hjem</h2>
+                <iframe src="map_home.html"></iframe>
+            </div>
+        </div>
 
-    <!-- SEKTION 4: BILLEDER -->
-    <div class="sektion">
-        <h2>Potentielle overnatninger</h2>
-        <p>1. Overnatning:</p>
-        <img src="home1.png" alt="Min data graf">
-        <p>2. Overnatning:</p>
-        <img src="home2.png" alt="Min data graf">
-        <p>3. Overnatning:</p>
-        <img src="home3.png" alt="Min data graf">
+
+        <div class="overnatning-sektion">
+            <h2>Potentielle overnatninger (Rute op)</h2>
+            <p class="undertekst">Oversigt over udvalgte spots langs ruten op.</p>
+            
+            <div class="billede-galleri">
+                <div class="billede-kort">
+                    <p>1. Overnatning</p>
+                    <img src="up1.png" alt="Overnatning 1 op">
+                </div>
+                <div class="billede-kort">
+                    <p>2. Overnatning</p>
+                    <img src="up2.png" alt="Overnatning 2 op">
+                </div>
+                <div class="billede-kort">
+                    <p>3. Overnatning</p>
+                    <img src="up3.png" alt="Overnatning 3 op">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="overnatning-sektion">
+            <h2>Potentielle overnatninger (Rute hjem)</h2>
+            <p class="undertekst">Oversigt over udvalgte spots på vej hjem igen.</p>
+            
+            <div class="billede-galleri">
+                <div class="billede-kort">
+                    <p>1. Overnatning</p>
+                    <img src="home1.png" alt="Overnatning 1 hjem">
+                </div>
+                <div class="billede-kort">
+                    <p>2. Overnatning</p>
+                    <img src="home2.png" alt="Overnatning 2 hjem">
+                </div>
+                <div class="billede-kort">
+                    <p>3. Overnatning</p>
+                    <img src="home3.png" alt="Overnatning 3 hjem">
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
